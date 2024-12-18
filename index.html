@@ -33,20 +33,27 @@
           <input type="search" id="searchPlayer" name="search" placeholder="Search" />
 </form>
 
+
+
 <table role="grid" id="allPlayers">
-<thead>
-  <tr>
-    <th scope="col">Name</th>
-    <th scope="col">Jersey</th>
-    <th scope="col">Position</th>
-    <th scope="col">Team</th>
-  </tr>
-</thead>
-<tbody>
-  <!-- <tr data-id="1"><th scope="row">Peter Forsberg</th><td>21</td><td>Forward</td><td>Colorado</td></tr><tr data-id="2"><th scope="row">Mats Sundin</th><td>13</td><td>Forward</td><td>Toronto</td></tr><tr data-id="3"><th scope="row">Niklas Lidström</th><td>5</td><td>Defence</td><td>Detroit</td></tr><tr data-id="4"><th scope="row">Mikko Rantanen</th><td>96</td><td>Forward</td><td>Colorado</td></tr><tr data-id="5"><th scope="row">Jack Johnson</th><td>3</td><td>Defence</td><td>Colorado</td></tr> -->
+  <thead>
+    <!-- <tr> tr har en lista med children -->
+      <th scope="col">Name</th>
+      <th scope="col">Jersey</th>
+      <th scope="col">Age</th>
+      <th scope="col">Team</th>
+    </tr>
+  </thead>
+<tbody id="playersBody">
+  <!-- <tr ><th scope="row">Peter Forsberg</th><td>21</td><td>Forward</td><td>Colorado</td></tr>
+  <tr ><th scope="row">Mats Sundin</th><td>13</td><td>Forward</td><td>Toronto</td></tr>
+  <tr ><th scope="row">Niklas Lidström</th><td>5</td><td>Defence</td><td>Detroit</td></tr> -->
+
+  
 </tbody>
 </table>
 <br>
+<button id="btn">Klicka</button>
 <br><br><br><br>
 
 <hr>
@@ -62,7 +69,7 @@
         <input type="text" id="namn" name="namn" placeholder="Your name" />
 
         <div>
-        <ul id="lightrope" class="lightrope" style="display: none;">
+        <ul id="lightrope" class="lightrope" style="display: block;">
           <li></li>
           <li></li>
           <li></li>
@@ -113,14 +120,16 @@
 
                     <!-- Search -->
                     <label for="wish">Ange önskan (fritext)</label>
-                    <input type="text" id="wish" name="wish" placeholder="Christmas Wish" />
+                    <input type="text" id="wish" name="wish" placeholder="Christmas Wish"  />
                     <select id="kategori">
                     </select>
                     <select id="sak">
                     </select>
 
       </form>
-      <img src="hund.jpg" width="100px" style="display: none;" id="hunden">
+      <button id="hundBtn">Visa hunden!!!</button>
+
+      <img src="hund.jpg" width="500px" style="display: none;" id="hunden">
       <hr><hr><hr><hr>
       <br/><br/><br/><br/><br/><br/><br/>
 
