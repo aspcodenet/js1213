@@ -90,6 +90,10 @@ function createTableRow(){
     tr.appendChild(td4)
     
     tbodyPlayers.appendChild(tr)
+
+
+    let searchLabel = document.getElementById("searchLabel")
+    searchLabel.style.fontSize="100px";
     
 }
 
@@ -107,6 +111,8 @@ let allPlayers = [player,player2]
 
 // det finns ett element som har id playersBody
 //
+
+
 
 let wish = document.getElementById("wish");
 wish.addEventListener("input",function(){
@@ -130,7 +136,14 @@ let btn = document.getElementById("btn");
 btn.addEventListener("click", createTableRow);
 
 
+const lightrope = document.getElementById("lightrope");
 
+wish.addEventListener("focus",function(){
+    lightrope.style.display="block";
+});
+wish.addEventListener("blur",function(){
+    lightrope.style.display="none";
+});
 
 
 
