@@ -1,3 +1,14 @@
+// 0.5 Fråga vad gör ... - SPREAD OPERATOR
+// const allDivs = document.querySelectorAll('div');
+// console.log([...allDivs])
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
+// 1. Events https://www.w3schools.com/jsref/dom_obj_event.asp
+// 2. Skapa  elemet - createelement vs innerHtml ioch backticks
+// 3. Skapa options från Product array
+// 4. dependent dropdowns
+// 5. timer+ setInterval
+
 // OBJEKT
 // int i = 12;
 
