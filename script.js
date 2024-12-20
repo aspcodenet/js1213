@@ -9,6 +9,82 @@
 // 4. dependent dropdowns
 // 5. timer+ setInterval
 
+const dateToCountdown = new Date("2024-12-24T15:00:00")
+
+const days  = document.getElementById("days")
+const hours  = document.getElementById("hours")
+const minutes  = document.getElementById("minutes")
+const seconds  = document.getElementById("seconds")
+
+// hur många dagar sen är betalningen
+// betaldatum - förfallodatum - 3 dagar 
+
+function updateCountDown(){
+    let now = new Date().getTime();
+    let distanceInMilliSeconds = dateToCountdown - now;
+    var daysLeft = Math.floor(distanceInMilliSeconds / (1000 * 60 * 60 * 24));
+    var hoursLeft = Math.floor((distanceInMilliSeconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutesLeft = Math.floor((distanceInMilliSeconds % (1000 * 60 * 60)) / (1000 * 60));
+    var secondsLeft = Math.floor((distanceInMilliSeconds % (1000 * 60)) / 1000);        
+    // uppdatera days, houyrs, minutes, seconds
+    days.innerText = daysLeft
+    hours.innerText = hoursLeft
+    minutes.innerText = minutesLeft
+    seconds.innerText = secondsLeft
+}
+
+// updateCounytDown ska antopas en gång i sekunden!
+setInterval(updateCountDown,1000)
+
+
+// constructor function
+function Product(name,category){
+    this.name = name
+    this.category = category
+}
+
+const products=[
+    new Product("Javascript for Dummies", "Böcker"),
+    new Product("Javascript for Christmas Lovers", "Böcker"),
+    new Product("Strumpor", "Kläder"),
+    new Product("Skor", "Kläder"),
+    new Product("Mössa", "Kläder"),
+    new Product("Playstation 5", "Leksaker"),
+    new Product("Hockeyspel Stiga", "Leksaker"),
+];
+
+const kategori = document.getElementById("kategori");
+const productSelect = document.getElementById("productSelect");
+
+function onKategoriChange(){
+    productSelect.innerHTML = "" // rensa alla options
+
+
+    let matchingProducts = products.filter(c=>c.category === kategori.value)
+    matchingProducts.forEach(item=>{
+        productSelect.innerHTML += `<option>${item.name}</option>`
+    });
+}
+
+
+kategori.addEventListener("change", onKategoriChange)
+
+
+// Alla tre kategorier - namn
+//const uniqueCategories = []
+// for(let i = 0; i < products.length;i++){
+//     // Om products[i].category inte finns i uniqueCategories
+//     // lägga in 
+// }
+// Where -> filter 
+// Select -> map (TRANSFORM)
+const uniqueCategories = [...new Set(products.map(function(item){return item.category}))];
+for(let i = 0; i < uniqueCategories.length;i++){
+    kategori.innerHTML += `<option>${uniqueCategories[i]}</option>`
+}
+
+onKategoriChange()
+
 // OBJEKT
 // int i = 12;
 
@@ -83,6 +159,10 @@ function createTableRow(){
     let tbodyPlayers = document.getElementById("playersBody")
 
     let tr = document.createElement("tr")
+
+    tr.addEventListener("click", function(){
+        alert("Click")
+    })
     
     let td1 = document.createElement("td")
     td1.innerText = "Hej"
