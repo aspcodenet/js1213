@@ -1,13 +1,16 @@
-const slideshow = document.querySelector(".slideshow-container")
-const allSlides =  slideshow.querySelectorAll("div.mySlides.fade")
+const slideshow = document.getElementById("slideshow-container")
+
+const allSlides =  slideshow.querySelectorAll("div.mySlides.fade") 
+// allSlides = NodeList (en wrapper runt en array)
+
 const prev = slideshow.querySelector(".prev")
+
 const next = slideshow.querySelector(".next")
-const dottarna = slideshow.querySelector(".dottarna")
 
 let activeIndex = 0
 let totalCount = allSlides.length
 
-const setActiveSlide = function(index){
+function setActiveSlide(index){
     activeIndex = index
     for(let i = 0; i < totalCount; i++){
         if (i === index){
@@ -20,24 +23,24 @@ const setActiveSlide = function(index){
 setActiveSlide(0)
 
 
-// prev.addEventListener("click",function(){
-//     if(activeIndex === 0){
-//         activeIndex = totalCount - 1
-//     }else{
-//         activeIndex = activeIndex - 1 
-//     }
-//     setActiveSlide(activeIndex)
-// })
+prev.addEventListener("click",function(){
+    if(activeIndex === 0){
+        activeIndex = totalCount - 1
+    }else{
+        activeIndex = activeIndex - 1 
+    }
+    setActiveSlide(activeIndex)
+})
 
 
-// next.addEventListener("click",function(){
-//     if(activeIndex === totalCount - 1){
-//         activeIndex = 0
-//     }else{
-//         activeIndex = activeIndex + 1 
-//     }
-//     setActiveSlide(activeIndex)
-// })
+next.addEventListener("click",function(){
+    if(activeIndex === totalCount - 1){
+        activeIndex = 0
+    }else{
+        activeIndex = activeIndex + 1 
+    }
+    setActiveSlide(activeIndex)
+})
 
 
 // for(let i = 0;i < totalCount; i++){
